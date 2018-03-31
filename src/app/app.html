@@ -1,0 +1,38 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list id="sidenav">
+            <ng-container *ngFor="let p of pages">
+                <ng-container *ngIf="p.display">
+                    <button ion-item menuClose (click)="openPage(p)">
+                        {{p.title}}
+                    </button>
+                </ng-container>
+            </ng-container>
+            <button ion-item (click)="togglecategoryMenu()">
+                Contribution Categories
+            </button>
+            <ion-item-group submenu *ngIf="toggleCategory" padding-left>
+                <ion-item submenu-item *ngFor="let category of categorys" menuClose (click)="openPage()">{{category.title}}</ion-item>
+            </ion-item-group>
+            <button ion-item (click)="toggleEventMenu()">
+                Event Categories
+            </button>
+            <ion-item-group submenu *ngIf="toggleEvent" padding-left>
+                <ion-item submenu-item *ngFor="let event of events" menuClose (click)="openPage()">{{event.title}}</ion-item>
+            </ion-item-group>
+        </ion-list>
+
+
+
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

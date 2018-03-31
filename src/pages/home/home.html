@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Passonnow</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            Contribution Categories
+        </ion-card-header>
+        <ion-list>
+            <ion-item *ngFor="let categoryItem of categorys">
+                <ion-thumbnail item-start>
+                    <img [src]="categoryItem.icon">
+                </ion-thumbnail>
+                <h2 class="align-text">{{categoryItem.title}}</h2>
+                <button ion-button clear item-end>View</button>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            Volunteer Event Categories
+        </ion-card-header>
+        <ion-list>
+            <ion-item *ngFor="let eventItem of events">
+                <ion-thumbnail item-start>
+                    <img [src]="eventItem.icon">
+                </ion-thumbnail>
+                <h2 class="align-text">{{eventItem.title}}</h2>
+                <button ion-button clear item-end>View</button>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>
