@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { PostContributionPage } from '../pages/post-contribution/post-contribution';
-import { ContributionPage } from '../pages/contribution/contribution';
+// import { ContributionPage } from '../pages/contribution/contribution';
 import { categoryItems, eventItems } from '../providers/main-config';
 
 @Component({
